@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>CV Generator</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>CV Generator</h1>
+        </header>
+        <section class="input-section">
+            <h2>Personal Information</h2>
+            <form id="cvForm" method="POST" enctype="multipart/form-data">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+
+                <label for="colorpicker">Color Picker:</label>
+                <input type="color" id="colorpicker" value="#4B0082">
+
+                <div id="additionalFields"></div>
+
+                <label for="photo">Photo:</label>
+                <input type="file" id="photo" name="photo" accept="image/*">
+
+                <button type="button" id="addOptionalFieldButton">Add Additional Field</button>
+
+                <h2>Introduction description</h2>
+                <label for="paragraphName">Paragraph name:</label>
+                <textarea id="paragraphName" name="paragraphName" rows="2" cols="120" maxlength="32"></textarea>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="10" cols="120" maxlength="2000"></textarea>
+
+                <h2>Work Experience</h2>
+               
+                <label for="workName">Company Name:</label>
+                <input type="text" id="workName" name="workName">
+
+                <label for="workDescription">Job Description:</label>
+                <textarea id="workDescription" name="workDescription" rows="10" cols="120" maxlength="2000"></textarea>
+
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate">
+
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate" name="endDate">
+
+                <button type="button" id="addWorkExperienceButton">Add Work Experience</button>
+
+                <h2>Section 1</h2>
+                <label for="section1Name">Paragraph name:</label>
+                <textarea id="section1Name" name="section1Name" rows="2" cols="120" maxlength="32"></textarea>
+
+                <label for="section1Description">Description:</label>
+                <textarea id="section1Description" name="section1Description" rows="10" cols="120" maxlength="2000"></textarea>
+
+                <h2>Section 2</h2>
+                <label for="section2Name">Paragraph name:</label>
+                <textarea id="section2Name" name="section2Name" rows="2" cols="120" maxlength="32"></textarea>
+
+                <label for="section2Description">Description:</label>
+                <textarea id="section2Description" name="section2Description" rows="10" cols="120" maxlength="2000"></textarea>
+
+                <h2>Section 3</h2>
+                <label for="section3Name">Paragraph name:</label>
+                <textarea id="section3Name" name="section3Name" rows="2" cols="120" maxlength="32"></textarea>
+
+                <label for="section3Description">Description:</label>
+                <textarea id="section3Description" name="section3Description" rows="10" cols="120" maxlength="2000"></textarea>
+              
+                <button type="button" id="addSkillButton">Add Skill</button>
+                <br>
+                <button type="button" id="clearFormButton">Clear Form</button>
+
+            </form>
+        </section>
+        <div class="cv-content-container" id="generatedCV">
+            <section class="cv-section">
+                <div class="cv-header" id="cvHeader">
+                    <h2 id="cvName">Your Name</h2>
+                    <div id="generatedCV"></div>
+                </div>
+                <div class="columns-container">
+                    <div class="column-20" id="column20">
+                        <div id="cvPhotoContainer">
+                            <img id="cvPhoto" alt="User Photo">
+                        </div>
+                        <div>
+                            <p id="contactText" class="column-20-description colorable">Contact</p>
+                            <p id="cvPhoneNumber">Phone Number: </p>
+                            <p id="cvEmail">Email: </p>
+                            <div id="additionalInfo"></div>
+                            <div id="skillsContainer" class="additional-info-section">
+                                <h2 class="colorable">Skills</h2>
+                                <div id="skillsList"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="column-80" id="column80">
+                        <p id="cvDescriptionContent"></p>
+                        <ul id="workList"></ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <button type="button" id="generateAndDownloadImageButton">Generate and Download Image</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

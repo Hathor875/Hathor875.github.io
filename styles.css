@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #4B0082;
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+#colorpicker {
+    max-width: 3%;
+}
+
+.input-section,
+.cv-section,
+.work-experience-section {
+    background-color: #fff;
+    padding: 20px;
+    max-width: 826px;
+    min-height: 1169px;
+    max-width: 1169px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-section h2,
+.input-section label,
+.cv-section h2,
+.cv-section label,
+.work-experience-section h2,
+.work-experience-section label,
+#cvDescriptionContent h2,
+#cvDescriptionContent p {
+    display: block;
+    margin-bottom: 8px;
+  
+}
+
+.input-section input,
+.input-section textarea,
+.cv-section input,
+.cv-section textarea,
+.work-experience-section input,
+.work-experience-section textarea {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+.columns-container {
+    display: flex;
+    width: 100%;
+}
+
+.column-20,
+.column-80 {
+    height: 200vh;
+}
+
+.column-20 {
+    flex: 1;
+    background-color: #efeeee;
+}
+
+.column-80 {
+    flex: 4;
+    background-color: #f9f9f9;
+}
+
+.cv-header {
+    background-color: #4B0082;
+    padding: 10px;
+    color: #fff;
+    text-align: left;
+}
+
+.optional-field {
+    background-color: #4B0082;
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+#cvPhotoContainer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#cvPhoto {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.column-20-description {
+    text-align: center;
+    color: #4B0082;
+    font-size: large;
+}
+
+#cvDescriptionContent,
+#workList {
+    text-align: center;
+}
+
+#workList {
+    list-style: none;
+    padding: 0;
+}
+
+#workList li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+#workList .bullet {
+    width: 10px;
+    height: 10px;
+    background-color: #4B0082;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#workList .work-info {
+    flex-grow: 1;
+}
+
+.colorable {
+    color: #4B0082;
+}
+
