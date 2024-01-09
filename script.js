@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     var cvForm = document.getElementById('cvForm');
     var optionalFieldsContainer = document.getElementById('additionalFields');
-    var optionalFieldIndex = 1;
     var maxOptionalFields = 4;
     var colorPicker = document.getElementById('colorpicker');
     var elementsToColor = document.querySelectorAll('.colorable');
@@ -15,21 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
         displayUserPhoto();
         generateAndDisplayCV();
     });
-
-    function displayUserPhoto() {
-        var file = photoInput.files[0];
-
-        if (file) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                cvPhoto.src = e.target.result;
-                cvPhoto.crossOrigin = "anonymous";
-            };
-            reader.readAsDataURL(file);
-        } else {
-            cvPhoto.src = '';
-        }
-    }
 
     colorPicker.addEventListener('input', function () {
         updateAccentColor(colorPicker.value);
@@ -49,26 +33,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('clearFormButton').addEventListener('click', function () {
         cvForm.reset();
-        optionalFieldIndex = 1;
         clearOptionalFields();
         displayUserPhoto();
         generateAndDisplayCV();
     });
+
     document.getElementById('addWorkExperienceButton').addEventListener('click', function () {
         var workName = document.getElementById('workName').value;
         var workDescription = document.getElementById('workDescription').value;
         var startDate = document.getElementById('startDate').value;
         var endDate = document.getElementById('endDate').value;
-    
+
         addWorkExperience(workName, workDescription, startDate, endDate);
-    
+
         // Clear input fields after adding work experience
         document.getElementById('workName').value = '';
         document.getElementById('workDescription').value = '';
         document.getElementById('startDate').value = '';
         document.getElementById('endDate').value = '';
     });
-    
 
     colorPicker.addEventListener('input', function () {
         updateAccentColor(colorPicker.value);
@@ -79,6 +62,27 @@ document.addEventListener('DOMContentLoaded', function () {
         elementsToColor.forEach(function (element) {
             element.style.color = newColor;
         });
+    
+        // Set background color for cvHeader
+        var cvHeader = document.getElementById('cvHeader');
+        if (cvHeader) {
+            cvHeader.style.backgroundColor = newColor;
+        }
+    }
+
+    function displayUserPhoto() {
+        var file = photoInput.files[0];
+
+        if (file) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                cvPhoto.src = e.target.result;
+                cvPhoto.crossOrigin = "anonymous";
+            };
+            reader.readAsDataURL(file);
+        } else {
+            cvPhoto.src = '';
+        }
     }
 
     function generateAndDisplayCV() {
@@ -88,7 +92,6 @@ document.addEventListener('DOMContentLoaded', function () {
         var lastName = document.getElementById('lastName').value;
         var phoneNumber = document.getElementById('phoneNumber').value || '';
         var email = document.getElementById('email').value || '';
-        var workListContainer = document.getElementById('workList'); 
         var cvNameElement = document.getElementById('cvName');
         var cvPhoneNumberElement = document.getElementById('cvPhoneNumber');
         var cvEmailElement = document.getElementById('cvEmail');
@@ -144,23 +147,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function addOptionalField() {
-        if (optionalFieldIndex <= maxOptionalFields) {
+        if (optionalFieldsContainer.children.length < maxOptionalFields) {
             var newField = document.createElement('div');
             newField.classList.add('optional-field');
 
             newField.innerHTML = `
-                <label for="optionalFieldName${optionalFieldIndex}">Field Name:</label>
-                <input type="text" id="optionalFieldName${optionalFieldIndex}" class="optional-field-name">
+                <label for="optionalFieldName">Field Name:</label>
+                <input type="text" class="optional-field-name">
 
-                <label for="optionalFieldValue${optionalFieldIndex}">Field Value:</label>
-                <input type="text" id="optionalFieldValue${optionalFieldIndex}" class="optional-field-value">
+                <label for="optionalFieldValue">Field Value:</label>
+                <input type="text" class="optional-field-value">
                 
                 <button type="button" class="deleteOptionalFieldButton">Delete Field</button>
             `;
 
             optionalFieldsContainer.appendChild(newField);
-            optionalFieldIndex++;
-
             updateAddButtonState();
             generateAndDisplayCV();
         } else {
@@ -169,10 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function clearOptionalFields() {
-        var optionalFields = document.querySelectorAll('.optional-field');
-        optionalFields.forEach(function (field) {
-            field.remove();
-        });
+        optionalFieldsContainer.innerHTML = '';
     }
 
     var addOptionalFieldButton = document.getElementById('addOptionalFieldButton');
@@ -181,7 +179,6 @@ document.addEventListener('DOMContentLoaded', function () {
     optionalFieldsContainer.addEventListener('click', function (event) {
         if (event.target.classList.contains('deleteOptionalFieldButton')) {
             event.target.parentElement.remove();
-            optionalFieldIndex--;
             updateAddButtonState();
             generateAndDisplayCV();
         }
@@ -189,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateAddButtonState() {
         var addButton = document.getElementById('addOptionalFieldButton');
-        addButton.disabled = optionalFieldIndex > maxOptionalFields;
+        addButton.disabled = optionalFieldsContainer.children.length >= maxOptionalFields;
     }
 
     var cvPhotoContainer = document.getElementById('cvPhotoContainer');
@@ -199,8 +196,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function addWorkExperience(name, description, startDate, endDate) {
-        var workListContainer = document.getElementById('workList');  // Dodaj tę linię
-    
         var listItem = document.createElement('li');
         listItem.innerHTML = `
             <span class="bullet"></span>
@@ -213,7 +208,6 @@ document.addEventListener('DOMContentLoaded', function () {
         workListContainer.appendChild(listItem);
         generateAndDisplayCV();
     }
-    
 
     function generateAndDownloadImage() {
         var cvSection = document.querySelector('.cv-section');
@@ -246,8 +240,8 @@ document.addEventListener('DOMContentLoaded', function () {
         var skillItem = document.createElement('div');
         skillItem.classList.add('skill-item');
         skillItem.innerHTML = `
-            <span class="skill-name">${skillName}</span>
-            <div class="skill-rating">${generateStarRating(skillRating)}</div>
+            <span class="skill-name"><h1>${skillName}</h1></span>
+            <div  class="skill-rating">${generateStarRating(skillRating)}</div>
         `;
         skillsListContainer.appendChild(skillItem);
         generateAndDisplayCV();

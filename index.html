@@ -83,20 +83,16 @@
                 <textarea id="section3Description" name="section3Description" rows="10" cols="120" maxlength="2000"></textarea>
                <h2>Skills</h2>
                 <br>
-                <button type="button" id="addSkillButton">Add Skill</button>
-                <br>
-                <br>
-                <br>
+                <button type="button" id="addSkillButton" class="larger-button">Add Skill</button>
                 <h2>Form control</h2>
-                <button type="button" id="clearFormButton">Clear Form</button>
-
+                <button type="button" id="clearFormButton" class="larger-button">Clear Form</button>
             </form>
         </section>
         <div class="cv-content-container" id="generatedCV">
             <section class="cv-section">
-                <div class="cv-header" id="cvHeader">
+                <div class="cv-header" id="cvHeader" class="colorable">
                     <h2 id="cvName">Your Name</h2>
-                    <div id="generatedCV"></div>
+                    <div id="cvDescriptionContent"></div>
                 </div>
                 <div class="columns-container">
                     <div class="column-20" id="column20">
@@ -122,10 +118,11 @@
                 </div>
             </section>
         </div>
-        <button type="button" id="generateAndDownloadImageButton">Generate and Download Image</button>
+        <button type="button" id="generateAndDownloadImageButton" class="larger-button">Generate and Download Image</button>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
     <script src="script.js"></script>
 </body>
 
 </html>
+
