@@ -183,11 +183,16 @@ document.addEventListener('DOMContentLoaded', function () {                     
 
     function clearWorkFields() {
       
-        var workFields = document.querySelectorAll('.work-info');
-            workFields.forEach(function (field) {
-            field.innerHTML = '';
+        const workFields = document.getElementById("workList");
            
-        });
+           
+           if(workFields !== null){workFields.remove(workFields.firstElementChild);
+           }
+            
+          var skills = document.getElementById("skillsContainer");
+          skills.innerHTML = '';
+        
+     
         generateAndDisplayCV;
     }
     var addOptionalFieldButton = document.getElementById('addOptionalFieldButton');
