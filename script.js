@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {                     
 
     document.getElementById('clearFormButton').addEventListener('click', function () { // click czyli gdy element zostanie kliknięty przez użytkownika
         cvForm.reset();
+        clearWorkFields();
         clearOptionalFields();
         displayUserPhoto();
         generateAndDisplayCV();
@@ -84,7 +85,8 @@ document.addEventListener('DOMContentLoaded', function () {                     
         }
     }
 
-    function generateAndDisplayCV() {           //generowaie CV
+    function generateAndDisplayCV() {   
+                //generowaie CV
         var description = document.getElementById('description').value;                     //odczytanie i zapisanie potrzbnych zmiennych
         var cvDescriptionContent = document.getElementById('cvDescriptionContent');
         var firstName = document.getElementById('firstName').value;
@@ -176,8 +178,18 @@ document.addEventListener('DOMContentLoaded', function () {                     
 
     function clearOptionalFields() {                //przycisk czyszczenia opcjonalnych pól
         optionalFieldsContainer.innerHTML = '';
+        
     }
 
+    function clearWorkFields() {
+      
+        var workFields = document.querySelectorAll('.work-info');
+            workFields.forEach(function (field) {
+            field.innerHTML = '';
+           
+        });
+        generateAndDisplayCV;
+    }
     var addOptionalFieldButton = document.getElementById('addOptionalFieldButton');
     addOptionalFieldButton.addEventListener('click', addOptionalField);
 
