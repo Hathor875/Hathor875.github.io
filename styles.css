@@ -152,3 +152,8 @@ header {
 .skill-rating{
     color: gold;
 }
+
+#colorpicker
+{
+ min-height: 50px;   
+}
