@@ -1,129 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML //EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+<TITLE> Krzysztof Cieślik, Programmer and Electronic Designer, Gdańsk, Poland </TITLE>
+</HEAD>
+<BODY>
+This page is free of Javascript. No need to analyze the source to read it!<hr>
+<A name="top">
+<H1>
+<img src="img.jpg" align="bottom" alt="My photo" width="177" height="222">
+Krzysztof Cieślik
+<audio controls style="display: block; margin-top: 10px;">
+    <source src="audio.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+</H1>
+<p>
+I am a Programmer, Electronic Designer R&D, and a Computer Science student at the Polish-Japanese Academy of Information Technology in Gdańsk. My career journey has evolved from automation to computer science, and I am passionate about developing professional software and innovative hardware solutions.
+</p>
+<hr>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>CV Generator</title>
-</head>
-
-<body>
-    <div class="container">
-        <header>
-            <h1>CV Generator</h1>
-        </header>
-        <section class="input-section">
-            <h2>Personal Information</h2>
-            <form id="cvForm" method="POST" enctype="multipart/form-data">
-                <label for="firstName">First Name:</label>
-                <input type="text" id="firstName" name="firstName" required>
-
-                <label for="lastName">Last Name:</label>
-                <input type="text" id="lastName" name="lastName" required>
-
-                <label for="phoneNumber">Phone Number:</label>
-                <input type="tel" id="phoneNumber" name="phoneNumber">
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-
-                <label for="colorpicker">Color Picker:</label>
-                <input type="color" id="colorpicker" value="#4B0082">
-
-                <div id="additionalFields"></div>
-
-                <label for="photo">Photo:</label>
-                <input type="file" id="photo" name="photo" accept="image/*">
-
-                <button type="button" id="addOptionalFieldButton">Add Additional Field</button>
-
-                <h2>Introduction description</h2>
-                <label for="paragraphName">Paragraph name:</label>
-                <textarea id="paragraphName" name="paragraphName" rows="2" cols="120" maxlength="32"></textarea>
-
-                <label for="description">Description:</label>
-                <textarea id="description" name="description" rows="10" cols="120" maxlength="2000"></textarea>
-
-                <h2>Work Experience</h2>
-               
-                <label for="workName">Company Name:</label>
-                <input type="text" id="workName" name="workName">
-
-                <label for="workDescription">Job Description:</label>
-                <textarea id="workDescription" name="workDescription" rows="10" cols="120" maxlength="2000"></textarea>
-
-                <label for="startDate">Start Date:</label>
-                <input type="date" id="startDate" name="startDate">
-
-                <label for="endDate">End Date:</label>
-                <input type="date" id="endDate" name="endDate">
-
-                <button type="button" id="addWorkExperienceButton">Add Work Experience</button>
-
-                <h2>Section 1</h2>
-                <label for="section1Name">Paragraph name:</label>
-                <textarea id="section1Name" name="section1Name" rows="2" cols="120" maxlength="32"></textarea>
-
-                <label for="section1Description">Description:</label>
-                <textarea id="section1Description" name="section1Description" rows="10" cols="120" maxlength="2000"></textarea>
-
-                <h2>Section 2</h2>
-                <label for="section2Name">Paragraph name:</label>
-                <textarea id="section2Name" name="section2Name" rows="2" cols="120" maxlength="32"></textarea>
-
-                <label for="section2Description">Description:</label>
-                <textarea id="section2Description" name="section2Description" rows="10" cols="120" maxlength="2000"></textarea>
-
-                <h2>Section 3</h2>
-                <label for="section3Name">Paragraph name:</label>
-                <textarea id="section3Name" name="section3Name" rows="2" cols="120" maxlength="32"></textarea>
-
-                <label for="section3Description">Description:</label>
-                <textarea id="section3Description" name="section3Description" rows="10" cols="120" maxlength="2000"></textarea>
-               <h2>Skills</h2>
-                <br>
-                <button type="button" id="addSkillButton" class="larger-button">Add Skill</button>
-                <h2>Form control</h2>
-                <button type="button" id="clearFormButton" class="larger-button">Clear Form</button>
-            </form>
-        </section>
-        <div class="cv-content-container" id="generatedCV">
-            <section class="cv-section">
-                <div class="cv-header" id="cvHeader" class="colorable">
-                    <h2 id="cvName">Your Name</h2>
-                  
-                </div>
-                <div class="columns-container">
-                    <div class="column-20" id="column20">
-                        <div id="cvPhotoContainer">
-                            <img id="cvPhoto" alt="User Photo">
-                        </div>
-                        <div>
-                            <p id="contactText" class="column-20-description colorable">Contact</p>
-                            <p id="cvPhoneNumber">Phone Number: </p>
-                            <p id="cvEmail">Email: </p>
-                            <div id="additionalInfo"></div>
-                            <div id="skillsContainer" class="additional-info-section">
-                                <h2 class="colorable">Skills</h2>
-                                <div id="skillsList"></div>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                    <div class="column-80" id="column80">
-                          <div id="cvDescriptionContent"></div>
-                        <ul id="workList"></ul>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <button type="button" id="generateAndDownloadImageButton" class="larger-button">Generate and Download Image</button>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script> 
-    <script src="script.js"></script>
-</body>
-
-</html>
+<hr>
+<A name="experience">
+<H2>Professional Experience:</H2>
+<ul>
+<li><b>Programmer - Electronic Designer R&D</b> - Radmor WB Group, Gdynia (10/2024 -- Present)
+<ul>
+<li>Python desktop and C/C++ embedded programming (STM32 bare-metal/FreeRTOS).</li>
+<li>Electronics designing and automated hardware testing development.</li>
+</ul>
+</li>
+<li><b>Computer Laboratory Technician</b> - Manpower Group, Gdańsk (12/2023 -- 09/2024)
+<ul>
+<li>Soldering SMD components, repairing computer components using schematics, boardview files, and documentation.</li>
+<li>Assembling and configuring PC platforms, maintaining and updating databases.</li>
+</ul>
+</li>
+<li><b>Building Maintenance Technician</b> - Sodexo, Gdańsk (11/2022 -- 02/2024)
+<ul>
+<li>Resolving IT and automation issues, operating and maintaining Building Management Systems, including monitoring and network management.</li>
+<li>Making effective decisions under pressure.</li>
+</ul>
+</li>
+<li><b>Electrician-Automation</b> - Ceramika Paradyż, Opoczno (07/2022 -- 09/2022)
+<ul>
+<li>Programming simple PLC controller programs, solving hardware-related IT problems, ensuring production traffic flow.</li>
+</ul>
+</li>
+<li><b>Electrician-Automation</b> - Cersanit, Opoczno (06/2021 -- 09/2021)
+<ul>
+<li>Maintaining and repairing production machines to ensure continuous production flow.</li>
+</ul>
+</li>
+<li><b>Electrician</b> - Intercity Remtrak, Gdańsk (07/2020 -- 09/2020)
+<ul>
+<li>Repairing electrical components of passenger carriages.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<A name="education">
+<H2>Education:</H2>
+<ul>
+<li><b>Bachelor's Degree in Computer Science</b> - Polish-Japanese Academy of Information Technology, Gdańsk (2020 -- In progress)
+<ul>
+<li>Relevant coursework: Algorithms, Embedded Systems, Java, and C programming.</li>
+</ul>
+</li>
+<li><b>Mechatronics Technician</b> - Stanisław Staszic Technical Secondary School, Opoczno (2018)</li>
+</ul>
+<hr>
+<A name="contact">
+<H2>Contact Information:</H2>
+<p>
+<b>Email:</b> <a href="mailto:krzysztofcieslik875@gmail.com">krzysztofcieslik875@gmail.com</a><br>
+<b>LinkedIn:</b> <a href="https://www.linkedin.com/in/krzysztof-cie%C5%9Blik-968128223/">linkedin.com/in/krzysztof-cieślik-968128223</a>
+</p>
+<hr>
+<A name="links">
+<H2>Additional Links:</H2>
+<ul>
+<li><a href="https://youtu.be/hi6G-0QReyg">YouTube Channel</a> - Repairing electronics and reverse engineering.</li>
+<li>Certifications: Python Essentials 1, Computer Hardware Basics (Cisco).</li>
+</ul>
+<hr>
+<p><b>Languages:</b> Polish (Native), English (B1+)</p>
+<p><b>Hobbies:</b> Linux operating systems, repairing electronics, reverse engineering.</p>
+<hr>
+<ADDRESS>
+<b>Email:</b> <a href="mailto:krzysztofcieslik875@gmail.com">krzysztofcieslik875@gmail.com</a><br>
+This page is Javascript free!
+</ADDRESS>
+</BODY>
+</HTML>
 
